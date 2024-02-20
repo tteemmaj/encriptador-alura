@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --background: #141b1e;
+    --accent: #e57474;
+    --foreground: #232a2d;
+    --hover: #D8DFE8;
+    --text: #dadada;
+    --body-text: 1.1em;
+    --title-text: 1.5em;
+}
+
+nav{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--background);
+}
+
+main{
+    width: 100;
+    height: 93vh;
+    background-color: var(--background);
+    display: flex;
+
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.div-izquierdo{
+    width: 70%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.div-derecho{
+    width: 30%;
+    height: 100%;
+    background-color: var(--foreground);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 24px;
+    color: var(--text);
+    gap: 20px;
+
+}
+
+.div-derecho > img {
+    width: 75%;
+    height: auto;
+}
+
+.div-derecho > h3{
+    font-size: var(--title-text);
+}
+
+.div-derecho > textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background: transparent;
+    color: var(--text);
+    outline: none;
+    border: none;
+    text-align: center;
+    font-size: var(--body-text);
+}
+
+.div-derecho > textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.div-derecho > textarea::-webkit-resizer{
+    display: none;
+}
+
+/* Estilos div izquierdo */
+.usuario-texto-div{
+    width: 100%;
+    height: 65%;
+}
+
+.usuario-texto-div > textarea{
+    width: 100%;
+    height: 100%;
+    margin: none;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: var(--body-text);
+    color: var(--text);
+    overflow: scroll;
+    background: var(--foreground);
+    border-radius: 24px;
+    padding: 20px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.usuario-texto-div > textarea::placeholder{
+    color: var(--text);
+}
+
+.usuario-texto-div > textarea::-webkit-scrollbar{
+    display: none;
+}
+
+.advertencia-div{
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: var(--text);
+}
+
+.advertencia-div > img{
+    width: 20px;
+}
+
+.botones-div{
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.botones-div > button {
+    padding: 20px;
+    border-radius: 24px;
+    margin: none;
+    outline: none;
+    border: none;
+    background: var(--accent);
+    color: var(--hover);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    font-size: 1.2em;
+}
+  
+.botones-div > button:hover{
+    background: #a64d4d;
+}
+
+.copiar-resultado{
+    width: 100%;
+}
+
+.vopiar-boton{
+    width: 40%;
+    height: 40px;
+    background: none;
+    border: none;
+    outline: 1px solid var(--accent);
+    border-radius: 24px;
+    color: var(--accent);
+    cursor: pointer;
+    display: none;
+}
+
+/* Para dispositivos pequeños */
+@media only screen and (max-width: 480px) {
+    .botones-div{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+
+/* para dispositivos mobiles */
+@media only screen and (max-width: 768px) {
+    main{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .div-izquierdo{
+        width: 100%;
+    }
+
+    .div-derecho{
+        width: 100%;
+    }
+
+    .usuario-texto-div > textarea{
+        height: 300px;
+    }
+
+    .div-derecho > img {
+        display: none;
+    }
+}

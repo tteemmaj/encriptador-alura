@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <img src="assets/Logo.svg" alt="">
+  </nav>
+  <main>
+    <div class="div-izquierdo">
+      <div class="usuario-texto-div">
+        <textarea name="" id="texto-usuario" placeholder="Ingresa el texto aquí."></textarea>
+      </div>
+      <div class="advertencia-div">
+        <img src="assets/important.svg" alt="">
+        <p>Solo letras minúsculas y sin acentos</p>
+      </div>
+      <div class="botones-div">
+          <button class="encriptar-btn">Encriptar</button>
+          <button class="desencriptar-btn">Desencriptar</button>
+      </div>
+    </div>
+    <div class="div-derecho">
+      <img src="assets/Muñeco.svg" class="img-derecha">
+      <h3 class="titulo-texto">Ningún texto fue encontrado</h3>
+      <textarea placeholder="Ingresa el texto que deseas encriptar o desencriptar" id="texto-resultado" readonly="readonly"></textarea>
+      <div class="copiar-resultado">
+        <button class="vopiar-boton">Copiar</button>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
