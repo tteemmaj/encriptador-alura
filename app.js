@@ -111,14 +111,6 @@ usuarioTexto.addEventListener('input', () => {
 
 borrarIcon.addEventListener('click', () => {
   borrarIcon.style.display = "none";
-  imgDerecha.style.display = "";
-  tituloDerecha.style.display = "";
-  textoResultado.value = "";
-  copiarBoton.style.display = "none"
-  let CentrarDivDerecho = document.querySelector('.div-derecho');
-  CentrarDivDerecho.style.display = "flex";
-  CentrarDivDerecho.style.justifyContent = "center";
-
 });
 
 
