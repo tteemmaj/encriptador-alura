@@ -11,26 +11,14 @@ let texto = "";
 
 
 function mostrarBoton() {
-  if (botonActivo = false) {
+  if (botonActivo == false) {
     copiarBoton.style.display = "none"
   } else {
     copiarBoton.style.display = "inline-block"
   }
 }
 
-function comprobar () {
-  if (usuarioTexto.value === "") {
-    alert("Tienes que escribir algo");
-  } else{
-    imgDerecha.style.display = "none";
-    tituloDerecha.style.display = "none";
-    let espacioResultado = document.getElementById('texto-resultado');
-    espacioResultado.style.height = "90%"
-    espacioResultado.style.textAlign = "left";
-    mostrarBoton();
-    botonActivo = true;
-  }
-} 
+
 
 /* encriptar */
 
@@ -40,6 +28,7 @@ encriptarBtn.addEventListener('click', () => {
   } else{
     encritar();
     comprobar();
+    mostrarBoton();
   }
   texto = ""; 
 })
@@ -92,6 +81,7 @@ desencriptarBtn.addEventListener('click', () => {
   } else {
     desencriptar();
     comprobar();
+    mostrarBoton();
   }
   texto = ""; 
 })
@@ -122,3 +112,18 @@ copiarBoton.addEventListener('click', () => {
   document.execCommand('copy');
   alert("Texto copiado correctamente")
 })
+
+function comprobar () {
+  if (usuarioTexto.value === "") {
+    alert("Tienes que escribir algo");
+    botonActivo = false
+  } else{
+    imgDerecha.style.display = "none";
+    tituloDerecha.style.display = "none";
+    let espacioResultado = document.getElementById('texto-resultado');
+    espacioResultado.style.height = "90%"
+    espacioResultado.style.textAlign = "left";
+    mostrarBoton();
+    botonActivo = true;
+  }
+} 
