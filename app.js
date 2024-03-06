@@ -6,6 +6,7 @@ let botonActivo = false;
 let textoResultado = document.querySelector('#texto-resultado');
 let imgDerecha = document.querySelector('.img-derecha');
 let tituloDerecha = document.querySelector('.titulo-texto');
+let borrarIcon = document.querySelector('#borrar-icon');
 let texto = "";
 
 
@@ -95,6 +96,31 @@ desencriptarBtn.addEventListener('click', () => {
   texto = ""; 
 })
 
+borrarIcon.addEventListener('click', () => {
+  usuarioTexto.value = "";
+})
+
+
+usuarioTexto.addEventListener('input', () => {
+  if (usuarioTexto.value.trim !== "") {
+    borrarIcon.style.display = "inline-block"
+  } else {
+    borrarIcon.style.display = "";
+  }
+})
+
+borrarIcon.addEventListener('click', () => {
+  borrarIcon.style.display = "none";
+  imgDerecha.style.display = "";
+  tituloDerecha.style.display = "";
+  textoResultado.value = "";
+  copiarBoton.style.display = "none"
+  let CentrarDivDerecho = document.querySelector('.div-derecho');
+  CentrarDivDerecho.style.display = "flex";
+  CentrarDivDerecho.style.justifyContent = "center";
+
+});
+
 
 /* Copiar texto encriptado */
 copiarBoton.addEventListener('click', () => {
@@ -102,4 +128,5 @@ copiarBoton.addEventListener('click', () => {
   textoEncriptado.focus();
   document.execCommand('selectAll');
   document.execCommand('copy');
+  alert("Texto copiado correctamente")
 })
